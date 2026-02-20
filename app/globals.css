@@ -44,7 +44,9 @@
 }
 
 /* ── Reset & Base ── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -82,12 +84,18 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 /* ── Typography ── */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--deep-plum);
   line-height: 1.2;
@@ -344,8 +352,8 @@ p {
   width: 150%;
   height: 150%;
   background: radial-gradient(ellipse at 30% 20%, rgba(201, 123, 132, 0.08) 0%, transparent 60%),
-              radial-gradient(ellipse at 70% 80%, rgba(139, 168, 136, 0.06) 0%, transparent 50%),
-              radial-gradient(ellipse at 50% 50%, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
+    radial-gradient(ellipse at 70% 80%, rgba(139, 168, 136, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
   pointer-events: none;
   animation: gentleFloat 20s ease-in-out infinite;
 }
@@ -841,23 +849,95 @@ p {
   margin-right: auto;
 }
 
-/* ── Sacred Signal ── */
-.sacred-signal {
-  padding: 80px 24px;
-  text-align: center;
+/* ── Sacred Signal (with image grid) ── */
+.sacred-signal-section {
+  padding: var(--section-padding);
   background: var(--overlay-light);
   border-top: 1px solid var(--light-border);
   border-bottom: 1px solid var(--light-border);
 }
 
-.sacred-signal h2 {
+.sacred-signal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.sacred-signal-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.sacred-signal-text h2 {
   font-style: italic;
   margin-bottom: 24px;
 }
 
-.sacred-signal p {
-  max-width: 680px;
-  margin: 0 auto 16px;
+.sacred-signal-text p {
+  margin-bottom: 16px;
+}
+
+/* ── Hero with Background Image ── */
+.hero-with-image {
+  background: var(--cream);
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg,
+      rgba(255, 248, 240, 0.82) 0%,
+      rgba(255, 248, 240, 0.75) 40%,
+      rgba(255, 248, 240, 0.88) 100%);
+  z-index: 1;
+}
+
+.hero-with-image .hero-content {
+  z-index: 2;
+}
+
+/* ── Community Image Section ── */
+.community-image-section {
+  overflow: hidden;
+}
+
+.community-image-wrapper {
+  position: relative;
+  max-height: 480px;
+  overflow: hidden;
+}
+
+.community-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 24px 32px;
+  background: linear-gradient(to top, rgba(74, 25, 66, 0.7) 0%, transparent 100%);
+}
+
+.community-image-caption {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
 }
 
 /* ── Animations ── */
@@ -866,6 +946,7 @@ p {
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -873,15 +954,33 @@ p {
 }
 
 @keyframes gentleFloat {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(10px, -10px) rotate(0.5deg); }
-  50% { transform: translate(-5px, 5px) rotate(-0.5deg); }
-  75% { transform: translate(5px, -5px) rotate(0.3deg); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(10px, -10px) rotate(0.5deg);
+  }
+
+  50% {
+    transform: translate(-5px, 5px) rotate(-0.5deg);
+  }
+
+  75% {
+    transform: translate(5px, -5px) rotate(0.3deg);
+  }
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Scroll reveal */
@@ -908,6 +1007,14 @@ p {
 
   .problems-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sacred-signal-grid {
+    gap: 40px;
+  }
+
+  .community-image-wrapper {
+    max-height: 380px;
   }
 }
 
@@ -946,6 +1053,23 @@ p {
   .steps-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .sacred-signal-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .sacred-signal-text {
+    text-align: center;
+  }
+
+  .sacred-signal-text .divider-left {
+    margin: 24px auto;
+  }
+
+  .community-image-wrapper {
+    max-height: 320px;
   }
 
   .hero {
@@ -992,7 +1116,10 @@ p {
 
 /* ── Accessibility ── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

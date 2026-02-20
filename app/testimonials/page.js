@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import Image from "next/image";
 
 export const metadata = {
     title: "Testimonials | Cindy Baez — Reflections of the Return",
@@ -71,7 +72,18 @@ export default function TestimonialsPage() {
             <ScrollReveal />
             <main>
                 {/* Hero */}
-                <section className="hero" style={{ minHeight: "60vh", paddingTop: 160, paddingBottom: 80 }}>
+                <section className="hero hero-with-image" style={{ minHeight: "60vh", paddingTop: 160, paddingBottom: 80 }}>
+                    <div className="hero-bg-image">
+                        <Image
+                            src="/cindy-teaching.png"
+                            alt="Cindy teaching and mentoring"
+                            fill
+                            priority
+                            style={{ objectFit: "cover", objectPosition: "center 30%" }}
+                            sizes="100vw"
+                        />
+                    </div>
+                    <div className="hero-overlay"></div>
                     <div className="hero-content">
                         <p className="hero-eyebrow">Testimonials</p>
                         <h1>Reflections of the Return</h1>

@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import ScrollReveal from "@/components/ScrollReveal";
+import Image from "next/image";
 
 const BOOKING_URL =
   "https://cal.com/cindybaez/the-sacred-return?overlayCalendar=true";
@@ -70,7 +71,18 @@ export default function Home() {
       <ScrollReveal />
       <main>
         {/* ═══════════════ HERO ═══════════════ */}
-        <section className="hero" id="hero">
+        <section className="hero hero-with-image" id="hero">
+          <div className="hero-bg-image">
+            <Image
+              src="/cindy-warrior.png"
+              alt="Cindy Baez in martial arts stance — strength and empowerment"
+              fill
+              priority
+              style={{ objectFit: "cover", objectPosition: "center 20%" }}
+              sizes="100vw"
+            />
+          </div>
+          <div className="hero-overlay"></div>
           <div className="hero-content">
             <p className="hero-eyebrow">Begin your sacred return</p>
             <h1>
@@ -169,14 +181,15 @@ export default function Home() {
             <div className="about-content reveal">
               <div className="about-image-wrapper">
                 <div className="about-image">
-                  <img
-                    src="/cindy-placeholder.jpg"
+                  <Image
+                    src="/cindy-portrait.png"
                     alt="Cindy Baez — Life Coach and guide for women's transformation"
+                    width={600}
+                    height={800}
                     style={{
-                      backgroundColor: "var(--soft-rose)",
-                      opacity: 0.2,
                       width: "100%",
                       height: "100%",
+                      objectFit: "cover",
                     }}
                   />
                 </div>
@@ -237,27 +250,67 @@ export default function Home() {
         </section>
 
         {/* ═══════════════ SACRED SIGNAL ═══════════════ */}
-        <section className="sacred-signal reveal">
-          <div className="container max-w-prose">
-            <h2>
-              If you&rsquo;re experiencing any of these, it&rsquo;s not a sign
-              you are broken. It&rsquo;s a sacred signal that you are ready to
-              come home.
-            </h2>
-            <div className="divider"></div>
-            <p>
-              You need a space where you can stop managing your pain and finally
-              release it. You need{" "}
-              <strong style={{ color: "var(--deep-plum)" }}>
-                Guided Accelerated Evolution.
-              </strong>
-            </p>
-            <p>
-              There is so much misinformation that keeps you running in circles,
-              trying to think your way into feeling better. But true, lasting
-              transformation is not an intellectual process. It is an embodied
-              return.
-            </p>
+        <section className="sacred-signal-section reveal">
+          <div className="container">
+            <div className="sacred-signal-grid">
+              <div className="sacred-signal-image">
+                <Image
+                  src="/cindy-retreat.png"
+                  alt="Cindy connecting one-on-one at a women's retreat"
+                  width={700}
+                  height={467}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "var(--radius-lg)",
+                  }}
+                />
+              </div>
+              <div className="sacred-signal-text">
+                <h2>
+                  If you&rsquo;re experiencing any of these, it&rsquo;s not a sign
+                  you are broken. It&rsquo;s a sacred signal that you are ready to
+                  come home.
+                </h2>
+                <div className="divider divider-left"></div>
+                <p>
+                  You need a space where you can stop managing your pain and finally
+                  release it. You need{" "}
+                  <strong style={{ color: "var(--deep-plum)" }}>
+                    Guided Accelerated Evolution.
+                  </strong>
+                </p>
+                <p>
+                  There is so much misinformation that keeps you running in circles,
+                  trying to think your way into feeling better. But true, lasting
+                  transformation is not an intellectual process. It is an embodied
+                  return.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════ COMMUNITY IMAGE BREAK ═══════════════ */}
+        <section className="community-image-section">
+          <div className="community-image-wrapper">
+            <Image
+              src="/cindy-group-class.png"
+              alt="Cindy leading a Warrior Wonder Women group class"
+              width={1400}
+              height={788}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+            <div className="community-image-overlay">
+              <p className="community-image-caption">
+                Warrior Wonder Women — Finding Strength Together
+              </p>
+            </div>
           </div>
         </section>
 
