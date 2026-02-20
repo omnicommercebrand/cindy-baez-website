@@ -71,18 +71,7 @@ export default function Home() {
       <ScrollReveal />
       <main>
         {/* ═══════════════ HERO ═══════════════ */}
-        <section className="hero hero-with-image" id="hero">
-          <div className="hero-bg-image">
-            <Image
-              src="/cindy-warrior.png"
-              alt="Cindy Baez in martial arts stance — strength and empowerment"
-              fill
-              priority
-              style={{ objectFit: "cover", objectPosition: "center 20%" }}
-              sizes="100vw"
-            />
-          </div>
-          <div className="hero-overlay"></div>
+        <section className="hero" id="hero">
           <div className="hero-content">
             <p className="hero-eyebrow">Begin your sacred return</p>
             <h1>
@@ -186,6 +175,7 @@ export default function Home() {
                     alt="Cindy Baez — Life Coach and guide for women's transformation"
                     width={600}
                     height={800}
+                    quality={90}
                     style={{
                       width: "100%",
                       height: "100%",
@@ -250,66 +240,46 @@ export default function Home() {
         </section>
 
         {/* ═══════════════ SACRED SIGNAL ═══════════════ */}
-        <section className="sacred-signal-section reveal">
-          <div className="container">
-            <div className="sacred-signal-grid">
-              <div className="sacred-signal-image">
-                <Image
-                  src="/cindy-retreat.png"
-                  alt="Cindy connecting one-on-one at a women's retreat"
-                  width={700}
-                  height={467}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "var(--radius-lg)",
-                  }}
-                />
-              </div>
-              <div className="sacred-signal-text">
-                <h2>
-                  If you&rsquo;re experiencing any of these, it&rsquo;s not a sign
-                  you are broken. It&rsquo;s a sacred signal that you are ready to
-                  come home.
-                </h2>
-                <div className="divider divider-left"></div>
-                <p>
-                  You need a space where you can stop managing your pain and finally
-                  release it. You need{" "}
-                  <strong style={{ color: "var(--deep-plum)" }}>
-                    Guided Accelerated Evolution.
-                  </strong>
-                </p>
-                <p>
-                  There is so much misinformation that keeps you running in circles,
-                  trying to think your way into feeling better. But true, lasting
-                  transformation is not an intellectual process. It is an embodied
-                  return.
-                </p>
-              </div>
-            </div>
+        <section className="sacred-signal reveal">
+          <div className="container max-w-prose">
+            <h2>
+              If you&rsquo;re experiencing any of these, it&rsquo;s not a sign
+              you are broken. It&rsquo;s a sacred signal that you are ready to
+              come home.
+            </h2>
+            <div className="divider"></div>
+            <p>
+              You need a space where you can stop managing your pain and finally
+              release it. You need{" "}
+              <strong style={{ color: "var(--deep-plum)" }}>
+                Guided Accelerated Evolution.
+              </strong>
+            </p>
+            <p>
+              There is so much misinformation that keeps you running in circles,
+              trying to think your way into feeling better. But true, lasting
+              transformation is not an intellectual process. It is an embodied
+              return.
+            </p>
           </div>
         </section>
 
-        {/* ═══════════════ COMMUNITY IMAGE BREAK ═══════════════ */}
-        <section className="community-image-section">
-          <div className="community-image-wrapper">
-            <Image
-              src="/cindy-group-class.png"
-              alt="Cindy leading a Warrior Wonder Women group class"
-              width={1400}
-              height={788}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
-            <div className="community-image-overlay">
-              <p className="community-image-caption">
-                Warrior Wonder Women — Finding Strength Together
-              </p>
+        {/* ═══════════════ PHOTO MOMENT — RETREAT ═══════════════ */}
+        <section className="photo-moment">
+          <div className="container">
+            <div className="photo-moment-frame reveal">
+              <Image
+                src="/cindy-retreat.png"
+                alt="Cindy connecting one-on-one with a woman at a retreat"
+                width={900}
+                height={600}
+                quality={90}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
             </div>
           </div>
         </section>
@@ -339,6 +309,42 @@ export default function Home() {
               >
                 Book a Sacred Conversation
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════ PHOTO MOMENT — WARRIOR ═══════════════ */}
+        <section className="photo-moment photo-moment-duo">
+          <div className="container">
+            <div className="photo-duo reveal">
+              <div className="photo-duo-item">
+                <Image
+                  src="/cindy-warrior.png"
+                  alt="Cindy Baez — Black Belt warrior and empowerment coach"
+                  width={600}
+                  height={600}
+                  quality={90}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              <div className="photo-duo-item">
+                <Image
+                  src="/cindy-group-class.png"
+                  alt="Cindy leading a Warrior Wonder Women group class"
+                  width={900}
+                  height={600}
+                  quality={90}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </section>

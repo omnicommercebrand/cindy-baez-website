@@ -849,95 +849,66 @@ p {
   margin-right: auto;
 }
 
-/* ── Sacred Signal (with image grid) ── */
-.sacred-signal-section {
-  padding: var(--section-padding);
+/* ── Sacred Signal ── */
+.sacred-signal {
+  padding: 80px 24px;
+  text-align: center;
   background: var(--overlay-light);
   border-top: 1px solid var(--light-border);
   border-bottom: 1px solid var(--light-border);
 }
 
-.sacred-signal-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.sacred-signal-image {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-medium);
-}
-
-.sacred-signal-text h2 {
+.sacred-signal h2 {
   font-style: italic;
   margin-bottom: 24px;
 }
 
-.sacred-signal-text p {
-  margin-bottom: 16px;
+.sacred-signal p {
+  max-width: 680px;
+  margin: 0 auto 16px;
 }
 
-/* ── Hero with Background Image ── */
-.hero-with-image {
-  background: var(--cream);
+/* ── Photo Moments ── */
+.photo-moment {
+  padding: 48px 24px;
+  background: var(--warm-white);
 }
 
-.hero-bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(180deg,
-      rgba(255, 248, 240, 0.82) 0%,
-      rgba(255, 248, 240, 0.75) 40%,
-      rgba(255, 248, 240, 0.88) 100%);
-  z-index: 1;
-}
-
-.hero-with-image .hero-content {
-  z-index: 2;
-}
-
-/* ── Community Image Section ── */
-.community-image-section {
+.photo-moment-frame {
+  max-width: 780px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  aspect-ratio: 3 / 2;
 }
 
-.community-image-wrapper {
-  position: relative;
-  max-height: 480px;
+.photo-moment-frame img {
+  display: block;
+}
+
+/* ── Photo Duo ── */
+.photo-duo {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.photo-duo-item {
+  border-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  aspect-ratio: 1 / 1;
 }
 
-.community-image-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 40px 24px 32px;
-  background: linear-gradient(to top, rgba(74, 25, 66, 0.7) 0%, transparent 100%);
+.photo-duo-item:last-child {
+  aspect-ratio: 3 / 2;
 }
 
-.community-image-caption {
-  font-family: var(--font-heading);
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.9);
-  text-align: center;
-  letter-spacing: 0.05em;
-  margin-bottom: 0;
+.photo-duo-item img {
+  display: block;
 }
 
 /* ── Animations ── */
@@ -1008,14 +979,6 @@ p {
   .problems-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .sacred-signal-grid {
-    gap: 40px;
-  }
-
-  .community-image-wrapper {
-    max-height: 380px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -1055,21 +1018,18 @@ p {
     gap: 24px;
   }
 
-  .sacred-signal-grid {
+  .photo-duo {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 20px;
   }
 
-  .sacred-signal-text {
-    text-align: center;
+  .photo-duo-item,
+  .photo-duo-item:last-child {
+    aspect-ratio: 3 / 2;
   }
 
-  .sacred-signal-text .divider-left {
-    margin: 24px auto;
-  }
-
-  .community-image-wrapper {
-    max-height: 320px;
+  .photo-moment-frame {
+    max-width: 100%;
   }
 
   .hero {
