@@ -1050,6 +1050,13 @@ p {
     padding: 72px 20px;
   }
 
+  .cta-section .btn,
+  .hero-cta .btn {
+    white-space: normal;
+    max-width: 100%;
+    padding: 16px 28px;
+  }
+
   .testimonial-card {
     padding: 36px 28px;
   }
