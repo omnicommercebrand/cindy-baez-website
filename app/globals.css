@@ -887,28 +887,53 @@ p {
   display: block;
 }
 
-/* ── Photo Duo ── */
-.photo-duo {
+/* ── Programs Grid ── */
+.programs-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 24px;
-  max-width: 960px;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
 }
 
-.photo-duo-item {
+.program-card {
+  background: var(--card-bg);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-medium);
-  aspect-ratio: 1 / 1;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--light-border);
+  transition: var(--transition);
 }
 
-.photo-duo-item:last-child {
-  aspect-ratio: 3 / 2;
+.program-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
 }
 
-.photo-duo-item img {
+.program-card-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.program-card-image img {
   display: block;
+  transition: transform 0.5s ease;
+}
+
+.program-card:hover .program-card-image img {
+  transform: scale(1.03);
+}
+
+.program-card-body {
+  padding: 36px 32px;
+}
+
+.program-card-body h3 {
+  margin-bottom: 16px;
+}
+
+.program-card-body p {
+  margin-bottom: 24px;
+  color: var(--muted-text);
+  line-height: 1.7;
 }
 
 /* ── Animations ── */
@@ -1018,14 +1043,8 @@ p {
     gap: 24px;
   }
 
-  .photo-duo {
+  .programs-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .photo-duo-item,
-  .photo-duo-item:last-child {
-    aspect-ratio: 3 / 2;
   }
 
   .photo-moment-frame {

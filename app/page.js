@@ -9,32 +9,26 @@ const BOOKING_URL =
 
 const problems = [
   {
-    num: "01",
     title: "Feeling Like a Shadow in Your Own Home",
     desc: "You walk past the mirror and flinch, avoiding the reflection of a woman you no longer recognize.",
   },
   {
-    num: "02",
     title: "The Silent War",
     desc: "You rage-clean the kitchen or snap at your partner — the pressure valve releasing for everything you've swallowed.",
   },
   {
-    num: "03",
     title: "Constant Depletion",
     desc: "You forget to eat until 3 PM because you were busy serving everyone else, surviving on leftover crusts and coffee.",
   },
   {
-    num: "04",
     title: "Numb & Disconnected",
     desc: "You scroll your phone for hours, looking for a spark of connection but ending up feeling even lonelier.",
   },
   {
-    num: "05",
     title: "The Performance",
     desc: 'You say "I\'m fine" even when you\'re falling apart inside, because asking for help doesn\'t even cross your mind.',
   },
   {
-    num: "06",
     title: "Loss of Desire",
     desc: "You can't remember the last time you felt truly sexy or alive in your body; it feels more like a duty than a home.",
   },
@@ -42,17 +36,14 @@ const problems = [
 
 const steps = [
   {
-    num: 1,
     title: "A Moment of Truth",
     desc: "We begin with a sacred conversation. This is not a sales call. It's a moment carved out of your life, for your life, where you can finally tell the truth without fear or judgment.",
   },
   {
-    num: 2,
     title: "The Sacred Release",
     desc: "In our private sessions, I create an impeccable container of safety for you to release what's been held for so long. You do not have to relive trauma to heal from it. You just have to be willing to let it go.",
   },
   {
-    num: 3,
     title: "Your Embodied Return",
     desc: "This is where you feel the shift in your bones. You walk away lighter, calmer, and with a renewed sense of who you are. You begin living a life that finally feels like your own.",
   },
@@ -230,7 +221,6 @@ export default function Home() {
             <div className="problems-grid">
               {problems.map((p, i) => (
                 <div className="problem-card reveal" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
-                  <div className="problem-number">{p.num}</div>
                   <h4>{p.title}</h4>
                   <p>{p.desc}</p>
                 </div>
@@ -252,7 +242,7 @@ export default function Home() {
               You need a space where you can stop managing your pain and finally
               release it. You need{" "}
               <strong style={{ color: "var(--deep-plum)" }}>
-                Guided Accelerated Evolution.
+                powerful guided exercises.
               </strong>
             </p>
             <p>
@@ -294,7 +284,6 @@ export default function Home() {
             <div className="steps-grid">
               {steps.map((s, i) => (
                 <div className="step-card reveal" key={i}>
-                  <div className="step-number">{s.num}</div>
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
                 </div>
@@ -313,37 +302,88 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════════ PHOTO MOMENT — WARRIOR ═══════════════ */}
-        <section className="photo-moment photo-moment-duo">
+        {/* ═══════════════ WARRIOR WONDER WOMEN & SELF-DEFENSE ═══════════════ */}
+        <section className="section" id="programs">
           <div className="container">
-            <div className="photo-duo reveal">
-              <div className="photo-duo-item">
-                <Image
-                  src="/cindy-warrior.png"
-                  alt="Cindy Baez — Black Belt warrior and empowerment coach"
-                  width={600}
-                  height={600}
-                  quality={90}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
-                />
+            <div className="text-center reveal" style={{ marginBottom: 60 }}>
+              <p className="hero-eyebrow" style={{ opacity: 1, animation: "none" }}>
+                Programs & Classes
+              </p>
+              <h2>More Ways to Come Home to Yourself</h2>
+              <div className="divider"></div>
+            </div>
+
+            <div className="programs-grid">
+              {/* Warrior Wonder Women */}
+              <div className="program-card reveal">
+                <div className="program-card-image">
+                  <Image
+                    src="/cindy-group-class.png"
+                    alt="Cindy leading a Warrior Wonder Women group class"
+                    width={700}
+                    height={467}
+                    quality={90}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="program-card-body">
+                  <h3>Warrior Wonder Women</h3>
+                  <p>
+                    A sacred circle where women come together to shed the armor,
+                    reconnect with their bodies, and remember who they are. Through
+                    powerful guided exercises, breathwork, and deep sisterhood, this
+                    class is a weekly homecoming — a place to be witnessed, held,
+                    and transformed.
+                  </p>
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline"
+                  >
+                    Learn More
+                  </a>
+                </div>
               </div>
-              <div className="photo-duo-item">
-                <Image
-                  src="/cindy-group-class.png"
-                  alt="Cindy leading a Warrior Wonder Women group class"
-                  width={900}
-                  height={600}
-                  quality={90}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
-                />
+
+              {/* Self-Defense */}
+              <div className="program-card reveal">
+                <div className="program-card-image">
+                  <Image
+                    src="/cindy-warrior.png"
+                    alt="Cindy Baez — Black Belt martial artist and empowerment coach"
+                    width={600}
+                    height={600}
+                    quality={90}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="program-card-body">
+                  <h3>Self-Defense for Women</h3>
+                  <p>
+                    Reclaim your power — physically and emotionally. As a Black Belt
+                    martial artist, Cindy teaches women practical self-defense skills
+                    rooted in confidence, awareness, and inner strength. These classes
+                    are about more than technique — they are about remembering that
+                    your body is your home, and you have every right to protect it.
+                  </p>
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline"
+                  >
+                    Learn More
+                  </a>
+                </div>
               </div>
             </div>
           </div>
