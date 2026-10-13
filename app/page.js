@@ -1,430 +1,356 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import FAQ from "@/components/FAQ";
-import ScrollReveal from "@/components/ScrollReveal";
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
+import { getContent } from '@/lib/content'
 
-const BOOKING_URL =
-  "https://cal.com/cindybaez/the-sacred-return?overlayCalendar=true";
+export const metadata = {
+  title: 'Sacred Return | Cindy Baez — Women\'s Empowerment Coach',
+  description:
+    'You are not broken. You are suppressed. Cindy Baez guides women from quiet self-abandonment back to their radiant, embodied power.',
+}
 
-const problems = [
-  {
-    title: "Feeling Like a Shadow in Your Own Home",
-    desc: "You walk past the mirror and flinch, avoiding the reflection of a woman you no longer recognize.",
-  },
-  {
-    title: "The Silent War",
-    desc: "You rage-clean the kitchen or snap at your partner — the pressure valve releasing for everything you've swallowed.",
-  },
-  {
-    title: "Constant Depletion",
-    desc: "You forget to eat until 3 PM because you were busy serving everyone else, surviving on leftover crusts and coffee.",
-  },
-  {
-    title: "Numb & Disconnected",
-    desc: "You scroll your phone for hours, looking for a spark of connection but ending up feeling even lonelier.",
-  },
-  {
-    title: "The Performance",
-    desc: 'You say "I\'m fine" even when you\'re falling apart inside, because asking for help doesn\'t even cross your mind.',
-  },
-  {
-    title: "Loss of Desire",
-    desc: "You can't remember the last time you felt truly sexy or alive in your body; it feels more like a duty than a home.",
-  },
-];
+export default async function HomePage({ searchParams }) {
+  const sp = (await searchParams) || {}
+  const draft = sp.draft === '1'
+  const content = await getContent({ draft })
+  const c = content.home
 
-const steps = [
-  {
-    title: "A Moment of Truth",
-    desc: "We begin with a sacred conversation. This is not a sales call. It's a moment carved out of your life, for your life, where you can finally tell the truth without fear or judgment.",
-  },
-  {
-    title: "The Sacred Release",
-    desc: "In our private sessions, I create an impeccable container of safety for you to release what's been held for so long. You do not have to relive trauma to heal from it. You just have to be willing to let it go.",
-  },
-  {
-    title: "Your Embodied Return",
-    desc: "This is where you feel the shift in your bones. You walk away lighter, calmer, and with a renewed sense of who you are. You begin living a life that finally feels like your own.",
-  },
-];
+  const editAttr = (id) => (draft ? { 'data-edit': id } : {})
 
-const marqueeItems = [
-  "Fierce Love & Unwavering Support",
-  "A Black Belt in Reality",
-  "A Sacred Space for Deep Transformation",
-];
-
-export default function Home() {
   return (
     <>
-      <Navigation />
-      <ScrollReveal />
-      <main>
-        {/* ═══════════════ HERO ═══════════════ */}
-        <section className="hero" id="hero">
-          <div className="hero-content">
-            <p className="hero-eyebrow">Begin your sacred return</p>
+      {/* ═══════════════ HERO ═══════════════ */}
+      <section className="v2-hero">
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <Image
+            src={c.hero.bgImage}
+            alt=""
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+            priority
+            unoptimized={c.hero.bgImage.startsWith('http')}
+          />
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'linear-gradient(105deg, var(--v2-bg) 0%, color-mix(in srgb, var(--v2-bg) 80%, transparent) 45%, color-mix(in srgb, var(--v2-bg) 30%, transparent) 100%)'
+          }} />
+        </div>
+        <div className="v2-hero-bg" aria-hidden="true" />
+        <div className="v2-container v2-hero-inner">
+          <div className="v2-hero-text">
+            <span className="v2-eyebrow" {...editAttr('home.hero.eyebrow')}>{c.hero.eyebrow}</span>
             <h1>
-              Hi, I&rsquo;m Cindy &mdash;
+              <span {...editAttr('home.hero.h1Line1')}>{c.hero.h1Line1}</span>
               <br />
-              <em>Nice to meet you</em>
+              <em {...editAttr('home.hero.h1Line2')}>{c.hero.h1Line2}</em>
             </h1>
-            <p className="hero-subtitle">
-              You&rsquo;ve become the keeper of everyone else&rsquo;s life. But
-              who is the keeper of yours? It&rsquo;s time to escape from quiet
-              self-abandonment to the radiant, embodied woman you were always
-              meant to be.
+            <p className="v2-hero-sub" {...editAttr('home.hero.subtitle')}>
+              {c.hero.subtitle}
             </p>
-            <div className="hero-cta">
+            <div className="v2-hero-cta">
               <a
-                href={BOOKING_URL}
+                href={c.hero.ctaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className="v2-btn v2-btn-primary"
+                {...editAttr('home.hero.ctaText')}
               >
-                Book a Sacred Conversation
+                {c.hero.ctaText}
               </a>
             </div>
           </div>
-        </section>
 
-        {/* ═══════════════ MARQUEE ═══════════════ */}
-        <div className="marquee-section" aria-hidden="true">
-          <div className="marquee-track">
-            {[0, 1].map((rep) => (
-              <div className="marquee-content" key={rep}>
-                {marqueeItems.map((item, i) => (
-                  <span key={i}>
-                    <span className="marquee-item">{item}</span>
-                    <span className="marquee-dot"></span>
-                  </span>
-                ))}
+          <div className="v2-hero-image-side">
+            <div className="v2-hero-accent-ring" aria-hidden="true" />
+            <div className="v2-hero-accent-blob" aria-hidden="true" />
+            <div className="v2-floral-frame">
+              <div className="v2-hero-image-frame" {...editAttr('home.hero.portrait')}>
+                <Image
+                  src={c.hero.portrait}
+                  alt={c.hero.portraitAlt}
+                  width={600}
+                  height={750}
+                  priority
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  unoptimized={c.hero.portrait.startsWith('http')}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ MARQUEE ═══════════════ */}
+      <div className="v2-marquee" aria-hidden="true">
+        <div className="v2-marquee-track">
+          {[0, 1].map((rep) => (
+            <div className="v2-marquee-content" key={rep}>
+              {c.marquee.map((item, i) => (
+                <span key={i}>
+                  <span className="v2-marquee-item">{item}</span>
+                  <span className="v2-marquee-dot" />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ═══════════════ SEEKING ═══════════════ */}
+      <section className="v2-section">
+        <div className="v2-container-narrow v2-text-center">
+          <div className="v2-reveal">
+            <span className="v2-eyebrow" {...editAttr('home.seeking.eyebrow')}>{c.seeking.eyebrow}</span>
+            <h2 {...editAttr('home.seeking.heading')}>{c.seeking.heading}</h2>
+            <div className="v2-divider" />
+            <p style={{ fontSize: '1.1rem', lineHeight: 1.9, marginBottom: '1.2em' }}>
+              <span {...editAttr('home.seeking.intro')}>{c.seeking.intro}</span>{' '}
+              <strong style={{ color: 'var(--v2-primary)' }} {...editAttr('home.seeking.highlight')}>{c.seeking.highlight}</strong>
+            </p>
+            <p style={{ fontFamily: 'var(--v2-font-heading)', fontStyle: 'italic', fontSize: '1.25rem', color: 'var(--v2-primary)' }}
+               {...editAttr('home.seeking.italicQuote')}>
+              {c.seeking.italicQuote}
+            </p>
+            <p {...editAttr('home.seeking.outro')}>
+              {c.seeking.outro}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ NATURE STRIP — White Flowers ═══════════════ */}
+      <div className="v2-nature-strip v2-reveal" {...editAttr('home.natureStrip1.image')}>
+        <Image
+          src={c.natureStrip1.image}
+          alt={c.natureStrip1.alt}
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center 60%' }}
+          unoptimized={c.natureStrip1.image.startsWith('http')}
+        />
+        <div
+          className="v2-nature-strip-overlay"
+          style={{
+            background: 'linear-gradient(to right, var(--v2-bg) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, var(--v2-bg) 100%)',
+          }}
+        />
+      </div>
+
+      {/* ═══════════════ PROBLEMS ═══════════════ */}
+      <section className="v2-section v2-section-alt">
+        <div className="v2-container">
+          <div className="v2-text-center v2-reveal" style={{ marginBottom: 56 }}>
+            <span className="v2-eyebrow" {...editAttr('home.problems.eyebrow')}>{c.problems.eyebrow}</span>
+            <h2 {...editAttr('home.problems.heading')}>{c.problems.heading}</h2>
+            <div className="v2-divider" />
+          </div>
+          <div className="v2-problems-grid v2-stagger">
+            {c.problems.items.map((p, i) => (
+              <div className="v2-problem-card v2-reveal" key={i}>
+                <h4 {...editAttr(`home.problems.items.${i}.title`)}>{p.title}</h4>
+                <p {...editAttr(`home.problems.items.${i}.desc`)}>{p.desc}</p>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* ═══════════════ SEEKING ═══════════════ */}
-        <section className="section text-center">
-          <div className="container max-w-prose reveal">
-            <h2>
-              You are here because you are seeking a way back to yourself.
-            </h2>
-            <div className="divider"></div>
-            <p>
-              Sometimes, the advice everyone gives — &ldquo;just love
-              yourself,&rdquo; &ldquo;take more me-time&rdquo; — but
-              that&rsquo;s not the answer that quiets the ache in your soul.
-            </p>
-            <p>
-              Countless women stay stuck, believing they have to try harder,
-              when the truth is they need to be{" "}
-              <strong>held differently.</strong>
-            </p>
+      {/* ═══════════════ SACRED SIGNAL ═══════════════ */}
+      <section className="v2-section-nature v2-reveal" style={{ padding: 'clamp(80px, 10vw, 140px) 0' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <Image
+            src={c.sacredSignal.bgImage}
+            alt=""
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+            unoptimized={c.sacredSignal.bgImage.startsWith('http')}
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,4,12,0.28) 0%, rgba(6,4,12,0.52) 60%, rgba(6,4,12,0.72) 100%)' }} />
+        </div>
+        <div className="v2-container-narrow v2-text-center" style={{ position: 'relative', zIndex: 2, padding: '0 32px' }}>
+          <span className="v2-eyebrow" {...editAttr('home.sacredSignal.eyebrow')}>{c.sacredSignal.eyebrow}</span>
+          <p className="v2-pullquote"
+             {...editAttr('home.sacredSignal.quote')}
+             style={{
+               color: '#FFFCF8',
+               fontSize: 'clamp(1.4rem, 2.5vw, 2.1rem)',
+               marginBottom: 32,
+               textShadow: '0 2px 20px rgba(0,0,0,0.3)',
+             }}>
+            &ldquo;{c.sacredSignal.quote}&rdquo;
+          </p>
+          <div className="v2-divider" style={{ margin: '0 auto 24px' }} />
+          <p style={{ color: 'rgba(255,255,255,0.85)', maxWidth: 540, margin: '0 auto' }}
+             {...editAttr('home.sacredSignal.outro')}>
+            {c.sacredSignal.outro}
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════ HOMECOMING STEPS ═══════════════ */}
+      <section className="v2-section">
+        <div className="v2-container">
+          <div className="v2-text-center v2-reveal" style={{ marginBottom: 56 }}>
+            <span className="v2-eyebrow" {...editAttr('home.homecoming.eyebrow')}>{c.homecoming.eyebrow}</span>
+            <h2 {...editAttr('home.homecoming.heading')}>{c.homecoming.heading}</h2>
+            <div className="v2-divider" />
           </div>
-        </section>
-
-        {/* ═══════════════ REMEMBER ═══════════════ */}
-        <section className="section section-alt text-center">
-          <div className="container max-w-prose reveal">
-            <h2 style={{ fontStyle: "italic", fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}>
-              Remember being a girl, when you danced for no reason, laughed from
-              your belly, and knew exactly who you were?
-            </h2>
-            <div className="divider"></div>
-            <p className="text-italic">That wasn&rsquo;t a fairy tale.</p>
-            <p>
-              That was before you started carrying the weight of a world that was
-              never yours to hold.
-            </p>
-            <p>
-              You&rsquo;ve tried to be the perfect mom who never drops the ball,
-              the wife who keeps everyone emotionally afloat, and the ambitious
-              woman climbing the corporate ladder working late nights — all while
-              dragging an invisible backpack filled with everyone&rsquo;s
-              expectations, and no room left for your own breath.
-            </p>
-            <p>
-              <strong
-                style={{ color: "var(--deep-plum)", fontSize: "1.2rem", fontFamily: "var(--font-heading)" }}
-              >
-                It doesn&rsquo;t have to be this way.
-              </strong>
-            </p>
-          </div>
-        </section>
-
-        {/* ═══════════════ ABOUT CINDY ═══════════════ */}
-        <section className="section" id="about">
-          <div className="container">
-            <div className="about-content reveal">
-              <div className="about-image-wrapper">
-                <div className="about-image">
-                  <Image
-                    src="/cindy-portrait.png"
-                    alt="Cindy Baez — Life Coach and guide for women's transformation"
-                    width={600}
-                    height={800}
-                    quality={90}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-                <div className="about-image-accent"></div>
+          <div className="v2-steps-grid v2-stagger">
+            {c.homecoming.steps.map((s, i) => (
+              <div className="v2-step-card v2-reveal" key={i}>
+                <h3 {...editAttr(`home.homecoming.steps.${i}.title`)}>{s.title}</h3>
+                <p {...editAttr(`home.homecoming.steps.${i}.desc`)}>{s.desc}</p>
               </div>
-              <div className="about-text">
-                <h2>My name is Cindy Baez</h2>
-                <div className="divider divider-left"></div>
-                <p className="text-italic">
-                  I guide women from the exhaustion of over-giving back to their
-                  own sacred center.
-                </p>
-                <p>
-                  <strong style={{ color: "var(--deep-plum)" }}>
-                    The struggle is a soul-deep ache.
-                  </strong>
-                </p>
-                <p>
-                  The quiet rage, the hidden grief, the feeling of being a ghost
-                  in your own home — it&rsquo;s a crushing weight. I know this
-                  place. I&rsquo;ve walked this path, too.
-                </p>
-                <p>
-                  After navigating my own dark nights of the soul, countless
-                  self-help books, and years of personal development, I realized
-                  the truth:
-                </p>
-                <p>
-                  No amount of journaling, meditating, or intellectualizing your
-                  pain will truly <strong>shift</strong> you until you release
-                  the emotional patterns from your body. And I finally know how
-                  to hold the sacred space for that return.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
-        </section>
-
-        {/* ═══════════════ PROBLEMS ═══════════════ */}
-        <section className="section section-alt">
-          <div className="container">
-            <div className="text-center max-w-prose reveal" style={{ marginBottom: 60 }}>
-              <h2>
-                What is keeping you from the woman you know you are?
-              </h2>
-              <div className="divider"></div>
-            </div>
-            <div className="problems-grid">
-              {problems.map((p, i) => (
-                <div className="problem-card reveal" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
-                  <h4>{p.title}</h4>
-                  <p>{p.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════ SACRED SIGNAL ═══════════════ */}
-        <section className="sacred-signal reveal">
-          <div className="container max-w-prose">
-            <h2>
-              If you&rsquo;re experiencing any of these, it&rsquo;s not a sign
-              you are broken. It&rsquo;s a sacred signal that you are ready to
-              come home.
-            </h2>
-            <div className="divider"></div>
-            <p>
-              You need a space where you can stop managing your pain and finally
-              release it. You need{" "}
-              <strong style={{ color: "var(--deep-plum)" }}>
-                powerful guided exercises.
-              </strong>
-            </p>
-            <p>
-              There is so much misinformation that keeps you running in circles,
-              trying to think your way into feeling better. But true, lasting
-              transformation is not an intellectual process. It is an embodied
-              return.
-            </p>
-          </div>
-        </section>
-
-        {/* ═══════════════ PHOTO MOMENT — RETREAT ═══════════════ */}
-        <section className="photo-moment">
-          <div className="container">
-            <div className="photo-moment-frame reveal">
-              <Image
-                src="/cindy-retreat.png"
-                alt="Cindy connecting one-on-one with a woman at a retreat"
-                width={900}
-                height={600}
-                quality={90}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════ HOMECOMING STEPS ═══════════════ */}
-        <section className="section">
-          <div className="container">
-            <div className="text-center reveal">
-              <h2>Homecoming: Your Path Back to You</h2>
-              <div className="divider"></div>
-            </div>
-            <div className="steps-grid">
-              {steps.map((s, i) => (
-                <div className="step-card reveal" key={i}>
-                  <h3>{s.title}</h3>
-                  <p>{s.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="text-center reveal" style={{ marginTop: 60 }}>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                Book a Sacred Conversation
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════ WARRIOR WONDER WOMEN & SELF-DEFENSE ═══════════════ */}
-        <section className="section" id="programs">
-          <div className="container">
-            <div className="text-center reveal" style={{ marginBottom: 60 }}>
-              <p className="hero-eyebrow" style={{ opacity: 1, animation: "none" }}>
-                Programs & Classes
-              </p>
-              <h2>More Ways to Come Home to Yourself</h2>
-              <div className="divider"></div>
-            </div>
-
-            <div className="programs-grid">
-              {/* Warrior Wonder Women */}
-              <div className="program-card reveal">
-                <div className="program-card-image">
-                  <Image
-                    src="/cindy-group-class.png"
-                    alt="Cindy leading a Warrior Wonder Women group class"
-                    width={700}
-                    height={467}
-                    quality={90}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-                <div className="program-card-body">
-                  <h3>Warrior Wonder Women</h3>
-                  <p>
-                    A sacred circle where women come together to shed the armor,
-                    reconnect with their bodies, and remember who they are. Through
-                    powerful guided exercises, breathwork, and deep sisterhood, this
-                    class is a weekly homecoming — a place to be witnessed, held,
-                    and transformed.
-                  </p>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline"
-                  >
-                    Learn More
-                  </a>
-                </div>
-              </div>
-
-              {/* Self-Defense */}
-              <div className="program-card reveal">
-                <div className="program-card-image">
-                  <Image
-                    src="/cindy-warrior.png"
-                    alt="Cindy Baez — Black Belt martial artist and empowerment coach"
-                    width={600}
-                    height={600}
-                    quality={90}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-                <div className="program-card-body">
-                  <h3>Self-Defense for Women</h3>
-                  <p>
-                    Reclaim your power — physically and emotionally. As a Black Belt
-                    martial artist, Cindy teaches women practical self-defense skills
-                    rooted in confidence, awareness, and inner strength. These classes
-                    are about more than technique — they are about remembering that
-                    your body is your home, and you have every right to protect it.
-                  </p>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline"
-                  >
-                    Learn More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════ FAQ ═══════════════ */}
-        <section className="section section-alt">
-          <div className="container">
-            <div className="text-center reveal">
-              <p className="hero-eyebrow" style={{ opacity: 1, animation: "none" }}>
-                FAQs
-              </p>
-              <h2>Frequently Asked Questions</h2>
-              <p className="text-italic">
-                Truths for the Tender and Brave Heart
-              </p>
-            </div>
-            <FAQ />
-          </div>
-        </section>
-
-        {/* ═══════════════ CTA / FREE GIFT ═══════════════ */}
-        <section className="cta-section">
-          <div className="container reveal">
-            <h2>You are not broken. You are buried.</h2>
-            <p>
-              A conversation is the first step to finding your way back.
-            </p>
+          <div className="v2-text-center v2-reveal" style={{ marginTop: 56 }}>
             <a
-              href={BOOKING_URL}
+              href={c.hero.ctaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary"
-              style={{ position: "relative" }}
+              className="v2-btn v2-btn-primary"
+              {...editAttr('home.homecoming.ctaText')}
             >
-              Book Your Sacred Conversation
+              {c.homecoming.ctaText}
             </a>
           </div>
-        </section>
-      </main>
-      <Footer />
+        </div>
+      </section>
+
+      {/* ═══════════════ NATURE STRIP — Lavender ═══════════════ */}
+      <div className="v2-nature-strip v2-reveal" style={{ height: 320 }} {...editAttr('home.natureStrip2.image')}>
+        <Image
+          src={c.natureStrip2.image}
+          alt={c.natureStrip2.alt}
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center 50%' }}
+          unoptimized={c.natureStrip2.image.startsWith('http')}
+        />
+        <div
+          className="v2-nature-strip-overlay"
+          style={{
+            background: 'linear-gradient(to bottom, var(--v2-bg) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, var(--v2-bg) 100%)',
+          }}
+        />
+      </div>
+
+      {/* ═══════════════ PROGRAMS PREVIEW ═══════════════ */}
+      <section className="v2-section v2-section-alt">
+        <div className="v2-container">
+          <div className="v2-text-center v2-reveal" style={{ marginBottom: 56 }}>
+            <span className="v2-eyebrow" {...editAttr('home.programsPreview.eyebrow')}>{c.programsPreview.eyebrow}</span>
+            <h2 {...editAttr('home.programsPreview.heading')}>{c.programsPreview.heading}</h2>
+            <div className="v2-divider" />
+          </div>
+          <div className="v2-programs-grid v2-stagger">
+            {c.programsPreview.items.map((p, i) => (
+              <div className="v2-program-card v2-reveal" key={i}>
+                <div className="v2-program-img" {...editAttr(`home.programsPreview.items.${i}.img`)}>
+                  <Image
+                    src={p.img}
+                    alt={p.alt}
+                    width={600}
+                    height={450}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    unoptimized={p.img.startsWith('http')}
+                  />
+                </div>
+                <div className="v2-program-body">
+                  <h3 {...editAttr(`home.programsPreview.items.${i}.title`)}>{p.title}</h3>
+                  <p {...editAttr(`home.programsPreview.items.${i}.desc`)}>{p.desc}</p>
+                  <Link href="/programs" className="v2-btn v2-btn-outline">
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ PHOTO BANNER ═══════════════ */}
+      <div className="v2-photo-banner">
+        <div {...editAttr('home.photoBanner.image')}>
+          <Image
+            src={c.photoBanner.image}
+            alt={c.photoBanner.alt}
+            width={1400}
+            height={500}
+            style={{ width: '100%', height: 500, objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+            unoptimized={c.photoBanner.image.startsWith('http')}
+          />
+        </div>
+        <div className="v2-photo-banner-overlay">
+          <div className="v2-reveal" style={{ maxWidth: 600 }}>
+            <h2 style={{ color: 'var(--v2-white)', marginBottom: 16 }} {...editAttr('home.photoBanner.quote')}>
+              &ldquo;{c.photoBanner.quote}&rdquo;
+            </h2>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', margin: 0 }} {...editAttr('home.photoBanner.attribution')}>
+              {c.photoBanner.attribution}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ═══════════════ TESTIMONIAL PULLQUOTE ═══════════════ */}
+      <section className="v2-section">
+        <div className="v2-container-narrow v2-text-center v2-reveal">
+          <p
+            className="v2-pullquote"
+            style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', marginBottom: 32 }}
+            {...editAttr('home.pullquote.text')}
+          >
+            &ldquo;{c.pullquote.text}&rdquo;
+          </p>
+          <span style={{
+            fontFamily: 'var(--v2-font-body)',
+            fontSize: '0.82rem',
+            fontWeight: 600,
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            color: 'var(--v2-accent)',
+          }}
+          {...editAttr('home.pullquote.attribution')}>
+            {c.pullquote.attribution}
+          </span>
+          <div style={{ marginTop: 40 }}>
+            <Link href="/testimonials" className="v2-btn v2-btn-outline" {...editAttr('home.pullquote.buttonText')}>
+              {c.pullquote.buttonText}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ CTA ═══════════════ */}
+      <section style={{ position: 'relative', overflow: 'hidden', padding: 'clamp(80px, 10vw, 140px) 0', background: 'var(--v2-bg-dark)' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <Image
+            src={c.finalCta.bgImage}
+            alt=""
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center 60%' }}
+            unoptimized={c.finalCta.bgImage.startsWith('http')}
+          />
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'linear-gradient(to bottom, rgba(6,4,12,0.32) 0%, rgba(6,4,12,0.55) 55%, rgba(6,4,12,0.75) 100%)',
+          }} />
+        </div>
+        <div className="v2-container-narrow v2-reveal v2-text-center" style={{ position: 'relative', zIndex: 2, padding: '0 32px' }}>
+          <span className="v2-eyebrow" style={{ color: 'var(--v2-accent-light)' }} {...editAttr('home.finalCta.eyebrow')}>{c.finalCta.eyebrow}</span>
+          <h2 style={{ color: '#FFFCF8', marginBottom: 24 }} {...editAttr('home.finalCta.heading')}>{c.finalCta.heading}</h2>
+          <p style={{ color: 'rgba(255,255,255,0.85)', maxWidth: 520, margin: '0 auto 40px' }} {...editAttr('home.finalCta.subtitle')}>
+            {c.finalCta.subtitle}
+          </p>
+          <a
+            href={c.hero.ctaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="v2-btn v2-btn-ghost"
+            {...editAttr('home.finalCta.ctaText')}
+          >
+            {c.finalCta.ctaText}
+          </a>
+        </div>
+      </section>
     </>
-  );
+  )
 }

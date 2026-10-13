@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Change Your Class Date</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{--magenta:#D01F7C;--magenta-2:#A81563;--orange:#F07E1C;--teal:#1F97BE;--green:#4F6E14;--green-bg:#DFEAC5;
+    --ink:#241A20;--body:#4C4048;--muted:#8A7D84;--line:#F1D3E0;--paper:#FDFAF4;--card:#ffffff;--wash:#FCEBF3}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1c1018;--card:#271520;--body:#e8d6e0;--ink:#fff;--muted:#b89aa9;--line:#3a2430;--wash:#3a1b2b;--green-bg:#2c3a14;--green:#cfe6a0}}
+  :root[data-theme="dark"]{--paper:#1c1018;--card:#271520;--body:#e8d6e0;--ink:#fff;--muted:#b89aa9;--line:#3a2430;--wash:#3a1b2b;--green-bg:#2c3a14;--green:#cfe6a0}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);font-family:Inter,system-ui,sans-serif;line-height:1.6;font-size:16px}
+  header{background:linear-gradient(135deg,#6E1A46 0%,#440E2A 100%);color:#fff;padding:48px 16px 40px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+  header .wrap{padding:0}
+  .kicker{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F6CFE0;margin:0 0 8px}
+  h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1.1;margin:0 0 10px}
+  header p{margin:0;opacity:.9;max-width:560px}
+  .pill{display:inline-block;margin-top:16px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:6px 13px;border-radius:999px;font-size:.88rem;font-weight:600}
+  main{padding:28px 0 64px}
+  h2{font-family:Fraunces,Georgia,serif;font-weight:600;color:var(--ink);font-size:1.45rem;margin:40px 0 10px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 20px;box-shadow:0 6px 24px rgba(110,26,70,.06)}
+  .link{display:block;text-align:center;background:var(--magenta);color:#fff;text-decoration:none;font-weight:800;font-size:1.25rem;padding:18px;border-radius:14px;margin:6px 0 10px}
+  .muted{color:var(--muted);font-size:.93rem;margin:0}
+  ol.steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:14px}
+  ol.steps li{counter-increment:s;display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start}
+  ol.steps li::before{content:counter(s);width:38px;height:38px;border-radius:50%;background:var(--wash);color:var(--magenta-2);font-weight:800;display:grid;place-items:center}
+  ol.steps b{color:var(--ink)}
+  ul.ticks{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+  ul.ticks li{display:flex;gap:10px;align-items:center;color:var(--ink)}
+  ul.ticks li::before{content:"✓";flex:0 0 24px;height:24px;border-radius:50%;background:var(--green-bg);color:var(--green);font-weight:800;font-size:.8rem;display:grid;place-items:center}
+  table{width:100%;border-collapse:collapse;font-size:.94rem;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  th{background:var(--wash);color:var(--ink);text-align:left;padding:10px 14px;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+  td{padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
+  .tablewrap{overflow-x:auto}
+  .note{background:var(--card);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;padding:12px 16px;margin:10px 0}
+  .note b{color:var(--ink)}
+  details{margin-top:44px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  summary{cursor:pointer;font-weight:700;color:var(--ink)}
+  pre{background:#241A20;color:#ffe9f4;padding:14px 16px;border-radius:12px;overflow-x:auto;font-size:.78rem;line-height:1.55}
+  code{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:.85em;background:var(--wash);color:var(--magenta-2);padding:1px 5px;border-radius:5px}
+  pre code{background:none;color:inherit;padding:0}
+  .next{margin-top:32px;background:var(--wash);border-radius:14px;padding:16px 18px;color:var(--ink)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <p class="kicker">For Cindy · Goddess Warrior</p>
+  <h1>How to change your class date</h1>
+  <p>One page, about 30 seconds, no tech needed. Your registration page, thank-you page and cal.com all change together.</p>
+  <span class="pill">Live now: Sunday, October 25, 2026 · 1:00–4:00 PM</span>
+</div></header>
+
+<main class="wrap">
+  <h2>Your one link</h2>
+  <div class="card">
+    <a class="link" href="https://www.cindybaez.com/class/admin">cindybaez.com/class/admin</a>
+    <p class="muted">Bookmark it, or add it to your phone's home screen (Safari → Share → <em>Add to Home Screen</em>).</p>
+  </div>
+
+  <h2>Changing the date (4 taps)</h2>
+  <div class="card">
+    <ol class="steps">
+      <li><div><b>Open your link.</b> The first time, type your website password. You stay signed in on that device for two weeks.</div></li>
+      <li><div><b>Pick the date.</b> Change the start and end time only if they're different. They're already set to your current times.</div></li>
+      <li><div><b>Tap "Update my class."</b> You'll see exactly what your pages will say.</div></li>
+      <li><div><b>Tap "Yes, update everything."</b> Wait about 10 seconds.</div></li>
+    </ol>
+    <p style="margin:18px 0 0;color:var(--ink);font-weight:600">You'll get a checklist of green ticks:</p>
+    <ul class="ticks">
+      <li>Booking calendar now opens on your new date</li>
+      <li>Event description updated on cal.com</li>
+      <li>Verified on cal.com: 15 of 15 seats open</li>
+      <li>Registration page shows your new date</li>
+      <li>Thank-you page shows your new date</li>
+    </ul>
+    <p class="muted" style="margin-top:14px">That's it. Nothing else to do.</p>
+  </div>
+
+  <h2>What changes for you automatically</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Where</th><th>What updates</th></tr>
+    <tr><td>Registration page</td><td>Date, time, Google search info</td></tr>
+    <tr><td>Thank-you page</td><td>Date, time, "arrive by," countdown, "add to calendar"</td></tr>
+    <tr><td>cal.com booking calendar</td><td>Only your new date can be booked</td></tr>
+    <tr><td>cal.com event description</td><td>The Date and Time lines (the rest of your text stays as you wrote it)</td></tr>
+    <tr><td>Reminders</td><td>cal.com emails and texts everyone who books</td></tr>
+  </table></div>
+
+  <h2>Good to know</h2>
+  <div class="note"><b>Women already booked on the old date.</b> If anyone has booked the date you're replacing, the page warns you before you confirm. Their bookings don't move on their own, so message them or reschedule them inside cal.com.</div>
+  <div class="note"><b>If something doesn't finish,</b> just tap <b>Try again.</b> Running it twice never doubles anything.</div>
+  <div class="note"><b>If a page tick says "still refreshing,"</b> wait a minute and look at the page. It always catches up within 10 minutes.</div>
+  <div class="note"><b>After a class has passed,</b> the settings page shows a reminder to pick your next date.</div>
+  <div class="note"><b>Price, address and seat count</b> stay the same. Ask Ishan if those ever change.</div>
+
+  <details>
+    <summary>For Ishan: how it works under the hood</summary>
+    <p><b>Source of truth = cal.com.</b> The pages read the class date live from the date override on Cindy's "Self Defense Class" schedule. They can't drift from her calendar.</p>
+<pre><code>Cindy → /class/admin → POST /api/class/date (editor-password session)
+  → lib/class-cal.js setClassDate()
+      1. PATCH schedule 2325390 overrides → [{ new date, start, end }]
+      2. PATCH event-type 6948640 description (Date/Time lines) + length
+      3. GET /slots → verify the new date is bookable
+  → revalidateTag('class-event') + revalidatePath(/class, /class/confirmed)
+  → browser confirms both pages show the new date</code></pre>
+    <div class="tablewrap"><table>
+      <tr><th>Piece</th><th>Location</th></tr>
+      <tr><td>Admin page</td><td><code>app/class/admin/</code></td></tr>
+      <tr><td>API route</td><td><code>app/api/class/date/route.js</code> (gated by <code>EDITOR_PASSWORD</code> session)</td></tr>
+      <tr><td>cal.com read/write</td><td><code>lib/class-cal.js</code></td></tr>
+      <tr><td>Labels + static details</td><td><code>components/gw/event.js</code></td></tr>
+      <tr><td>CLI twin</td><td><code>node scripts/new-class.mjs --show</code></td></tr>
+      <tr><td>cal.com IDs</td><td>event-type <code>6948640</code>, schedule <code>2325390</code></td></tr>
+      <tr><td>Secret</td><td><code>CINDY_CALCOM_API_KEY</code>: Vercel Production (encrypted, sensitive) + local <code>.env.local</code>. Separate from RevenueFlows <code>CAL_API_KEY</code>.</td></tr>
+    </table></div>
+    <p><b>Resilience:</b> if cal.com is unreachable, pages fall back to <code>FALLBACK_EVENT</code> in event.js and the admin page says so. Pages re-read cal.com every 10 minutes.</p>
+    <p><b>Price, seats or address:</b> edit <code>components/gw/event.js</code>, then <code>vercel --prod</code>.</p>
+    <p><b>Rotating the key:</b> update <code>.env.local</code>, then <code>vercel env rm</code> + <code>vercel env add CINDY_CALCOM_API_KEY production</code>, then redeploy.</p>
+  </details>
+
+  <div class="next"><b>Next move:</b> give Cindy the website password and have her add cindybaez.com/class/admin to her home screen.</div>
+</main>
+</body>
+</html>

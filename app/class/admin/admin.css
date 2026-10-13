@@ -1,0 +1,70 @@
+/* Class admin — Cindy's one-screen date changer. Mobile-first. */
+.gw .gwa { background: var(--cream, #FDFAF4); color: var(--body, #4C4048); font-family: Inter, system-ui, sans-serif; min-height: 70vh; }
+.gw .gwa-wrap { max-width: 620px; margin: 0 auto; padding: 0 16px; }
+
+.gw .gwa-head { background: linear-gradient(135deg, #6E1A46 0%, #440E2A 100%); color: #fff; padding: 132px 0 44px; }
+.gw .gwa-kicker { display: inline-block; font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #F6CFE0; margin-bottom: 8px; }
+.gw .gwa-head h1 { font-family: Inter, system-ui, sans-serif; margin: 0 0 10px; font-size: clamp(1.9rem, 6vw, 2.5rem); line-height: 1.1; color: #fff; font-weight: 700; }
+.gw .gwa-head p { margin: 0; color: rgba(255,255,255,.86); font-size: 1rem; line-height: 1.55; }
+
+.gw .gwa-body { padding-top: 24px; padding-bottom: 56px; display: grid; gap: 18px; }
+.gw .gwa-card { background: #fff; border: 1px solid #F1D3E0; border-radius: 18px; padding: 22px 20px; box-shadow: 0 6px 24px rgba(110,26,70,.06); }
+.gw .gwa-card-alert { border-color: #F0B6C7; background: #FFF6F9; }
+.gw .gwa-label { display: block; font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #D01F7C; margin-bottom: 10px; }
+.gw .gwa-big { font-size: clamp(1.35rem, 5vw, 1.7rem); font-weight: 700; color: #241A20; line-height: 1.2; }
+.gw .gwa-sub { margin-top: 4px; color: #4C4048; font-size: 1.02rem; }
+
+.gw .gwa-seats { margin-top: 14px; font-size: .95rem; color: #4C4048; }
+.gw .gwa-seats b { color: #241A20; }
+.gw .gwa-bar { display: block; height: 8px; border-radius: 99px; background: #FCEBF3; margin-top: 8px; overflow: hidden; }
+.gw .gwa-bar i { display: block; height: 100%; background: linear-gradient(90deg, #D01F7C, #F07E1C); border-radius: 99px; }
+
+.gw .gwa-field { display: grid; gap: 6px; margin-bottom: 14px; }
+.gw .gwa-field span { font-size: .9rem; font-weight: 600; color: #241A20; }
+.gw .gwa-field input, .gw .gwa-field select {
+  width: 100%; box-sizing: border-box; font: inherit; font-size: 1.05rem; color: #241A20;
+  padding: 14px 14px; border: 1.5px solid #E7CFDB; border-radius: 12px; background: #fff; min-height: 52px;
+  -webkit-appearance: none; appearance: none;
+}
+.gw .gwa-field select { background-image: linear-gradient(45deg, transparent 50%, #A81563 50%), linear-gradient(135deg, #A81563 50%, transparent 50%);
+  background-position: calc(100% - 20px) 50%, calc(100% - 14px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 36px; }
+.gw .gwa-field input:focus, .gw .gwa-field select:focus { outline: none; border-color: #D01F7C; box-shadow: 0 0 0 4px rgba(208,31,124,.14); }
+.gw .gwa-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.gw .gwa-preview { display: grid; gap: 3px; background: #FCEBF3; border-radius: 12px; padding: 14px 16px; margin: 4px 0 16px; }
+.gw .gwa-preview span { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #A81563; }
+.gw .gwa-preview b { font-size: 1.1rem; color: #241A20; }
+.gw .gwa-preview em { font-style: normal; font-size: .92rem; color: #4C4048; }
+.gw .gwa-preview.is-empty { background: #F8F1E7; }
+.gw .gwa-preview.is-empty span { color: #8A7D84; text-transform: none; letter-spacing: 0; font-size: .95rem; font-weight: 600; }
+
+.gw .gwa .gwa-btn {
+  display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 54px; box-sizing: border-box;
+  padding: 14px 20px; border: 0; border-radius: 13px; background: #D01F7C; color: #fff !important; font: inherit;
+  font-size: 1.05rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: background .15s, transform .1s;
+}
+.gw .gwa .gwa-btn:hover { background: #A81563; }
+.gw .gwa .gwa-btn:active { transform: scale(.99); }
+.gw .gwa .gwa-btn:disabled { background: #E7CFDB; color: #8A7D84 !important; cursor: not-allowed; }
+.gw .gwa .gwa-btn-ghost { background: #fff; color: #A81563 !important; border: 1.5px solid #E7CFDB; }
+.gw .gwa .gwa-btn-ghost:hover { background: #FCEBF3; }
+.gw .gwa-btns { display: grid; gap: 10px; margin-top: 14px; }
+
+.gw .gwa-confirm p { margin: 0 0 6px; font-size: 1.02rem; color: #241A20; line-height: 1.5; }
+.gw .gwa-warn { margin: 12px 0 0; padding: 12px 14px; border-radius: 12px; background: #FFF1E3; color: #8A3E05; font-size: .95rem; line-height: 1.5; border: 1px solid #FBE0C4; }
+.gw .gwa-note { margin: 10px 0 0; font-size: .9rem; color: #8A7D84; line-height: 1.5; }
+.gw .gwa-foot { text-align: center; padding: 0 8px; }
+
+.gw .gwa-checks { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+.gw .gwa-checks li { display: flex; gap: 10px; align-items: flex-start; font-size: .98rem; color: #241A20; line-height: 1.45; }
+.gw .gwa-checks li i { flex: 0 0 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: .8rem; font-weight: 800; }
+.gw .gwa-checks li.ok i { background: #DFEAC5; color: #4F6E14; }
+.gw .gwa-checks li.slow i { background: #FBE0C4; color: #8A3E05; }
+.gw .gwa-checks li.pending { color: #8A7D84; }
+.gw .gwa-checks li.pending i { border: 3px solid #F6CFE0; border-top-color: #D01F7C; animation: gwa-spin .8s linear infinite; box-sizing: border-box; }
+@keyframes gwa-spin { to { transform: rotate(360deg); } }
+
+@media (min-width: 560px) {
+  .gw .gwa-btns { grid-template-columns: 1fr 1fr; }
+  .gw .gwa-btns .gwa-btn:only-child { grid-column: 1 / -1; }
+}

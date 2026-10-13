@@ -1,0 +1,135 @@
+{
+  "home": {
+    "hero": {
+      "bgImage": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1920&q=80&auto=format&fit=crop",
+      "eyebrow": "For Women Ready to Come Home",
+      "h1Line1": "You Are Not Broken.",
+      "h1Line2": "You Are Suppressed.",
+      "subtitle": "You've become the keeper of everyone else's life — the calendar, the laundry, the emotional weight of the whole house. But somewhere along the way, you forgot her. The wild, soft, sacred soul who once lit up every room she walked into. She's still there. Waiting.",
+      "ctaText": "Book a Sacred Conversation",
+      "ctaUrl": "https://cal.com/cindybaez/the-sacred-return?overlayCalendar=true",
+      "portrait": "/cindy-casual.jpg",
+      "portraitAlt": "Cindy Baez — Women's Empowerment Coach"
+    },
+    "marquee": [
+      "Fierce Love & Unwavering Support",
+      "A Black Belt in Reality",
+      "A Sacred Space for Deep Transformation",
+      "Cutting-Edge Rapid Coherence Integration",
+      "30+ Years of Martial Arts Mastery"
+    ],
+    "seeking": {
+      "eyebrow": "You Are Here Because",
+      "heading": "You Are Seeking a Way Back to Yourself",
+      "intro": "Sometimes, the advice everyone gives — \"just love yourself,\" \"take more me-time\" — doesn't quiet the ache in your soul. Countless women stay stuck, believing they have to try harder. When the truth is, they need to be",
+      "highlight": "held differently.",
+      "italicQuote": "Remember being a girl, when you danced for no reason, laughed from your belly, and knew exactly who you were?",
+      "outro": "That wasn't a fairy tale. That was before you started carrying a weight that was never yours to hold."
+    },
+    "natureStrip1": {
+      "image": "https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?w=1920&q=80&auto=format&fit=crop",
+      "alt": "Delicate white flowers — quiet beauty waiting to bloom"
+    },
+    "problems": {
+      "eyebrow": "What's Keeping You Stuck",
+      "heading": "What Is Keeping You from the Woman You Know You Are?",
+      "items": [
+        {
+          "title": "You're Not Struggling. You're Contained.",
+          "desc": "There's a version of you that's been waiting — patient, powerful, restless — for you to stop playing the game you outgrew years ago. You can feel her. You just can't seem to get to her."
+        },
+        {
+          "title": "You Pull Back Every Time It Gets Real",
+          "desc": "The capability is real. The goal is clear. But the moment you're about to step fully into it — something pulls you back. Every. Single. Time. And you're running out of explanations for why."
+        },
+        {
+          "title": "Highly Capable. Completely Overwhelmed.",
+          "desc": "You can manage anything except the noise inside your own head. You don't need another strategy. You need the chaos to stop — so you can finally hear yourself think, decide, and move."
+        },
+        {
+          "title": "The Most Powerful Person — Who Never Goes First",
+          "desc": "You've spent years making yourself smaller so others could feel bigger. You're the most capable, most restrained person in every room. And it's costing you everything."
+        },
+        {
+          "title": "Excellent at Doing. Starving to Feel Alive.",
+          "desc": "You've mastered showing up, producing, delivering. But somewhere in all that excellence, the feeling vanished. You want more than performance. You want to be lit up by your own life again."
+        },
+        {
+          "title": "You've Tasted Freedom — Then Talked Yourself Out of It",
+          "desc": "That version of you — unguarded, certain, electric, completely free. You've felt her. She's not a fantasy. She's not who you used to be. She's who you actually are. Buried. Ready. Done waiting."
+        }
+      ]
+    },
+    "sacredSignal": {
+      "bgImage": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80&auto=format&fit=crop",
+      "eyebrow": "A Sacred Signal",
+      "quote": "If you're experiencing any of these, it's not a sign you are broken. It's a sacred signal that you are ready to come home.",
+      "outro": "You need a space where you can stop managing your pain and finally release it. True, lasting transformation is not an intellectual process — it is an embodied return."
+    },
+    "homecoming": {
+      "eyebrow": "The Path",
+      "heading": "Homecoming: Your Path Back to You",
+      "steps": [
+        {
+          "title": "A Moment of Truth",
+          "desc": "We begin with a sacred conversation — not a sales call. A moment carved out of your life, for your life. Where you can finally tell the truth without fear, without judgment, without having to manage anyone else's reaction."
+        },
+        {
+          "title": "The Sacred Release",
+          "desc": "In our private sessions, Cindy creates an impeccable container of safety. You do not have to relive your trauma to heal from it. You just have to be willing to let it move through you — and let it go."
+        },
+        {
+          "title": "Your Embodied Return",
+          "desc": "This is where you feel the shift in your bones. You walk away lighter, calmer, with a renewed sense of who you are. Not performing. Not managing. Actually living — in a life that finally feels like yours."
+        }
+      ],
+      "ctaText": "Begin Your Return"
+    },
+    "natureStrip2": {
+      "image": "https://images.unsplash.com/photo-1499002238440-d264edd596ec?w=1920&q=80&auto=format&fit=crop",
+      "alt": "Lavender field — peace, healing, the sacred return"
+    },
+    "programsPreview": {
+      "eyebrow": "Ways to Work Together",
+      "heading": "More Ways to Come Home to Yourself",
+      "items": [
+        {
+          "title": "Sacred 1:1 Coaching",
+          "desc": "Private sessions using Rapid Coherence Integration — dissolving inner pain loops, clearing emotional blocks, and reconnecting you to the woman you thought was gone. Results in hours, not years.",
+          "img": "/cindy-teaching.png",
+          "alt": "Cindy Baez in a private coaching session"
+        },
+        {
+          "title": "Warrior Wonder Women",
+          "desc": "A vibrant weekly group experience — a sacred circle where women come together to shed the armor, reconnect with their bodies, and remember who they are. Community as a catalyst.",
+          "img": "/cindy-group-class.png",
+          "alt": "Cindy leading a Warrior Wonder Women group class"
+        },
+        {
+          "title": "Self-Defense & Retreats",
+          "desc": "Reclaim your power — physically and emotionally. As a black belt martial artist, Cindy teaches women to walk through the world with unshakable confidence. Practical skills. Inner strength. Freedom.",
+          "img": "/cindy-warrior.png",
+          "alt": "Cindy Baez demonstrating self-defense as a black belt martial artist"
+        }
+      ]
+    },
+    "photoBanner": {
+      "image": "/cindy-retreat.png",
+      "alt": "Cindy Baez connecting one-on-one with a woman at a retreat",
+      "quote": "In the space I hold, women remember who they were before the world told them who to be.",
+      "attribution": "— Cindy Baez"
+    },
+    "pullquote": {
+      "text": "Cindy's magic is her ability to hold and create an impeccable space where transformation is natural, potent and powerful.",
+      "attribution": "— Ishan",
+      "buttonText": "Read More Stories"
+    },
+    "finalCta": {
+      "bgImage": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1920&q=80&auto=format&fit=crop",
+      "eyebrow": "Take the First Step",
+      "heading": "You Were Not Born for Burnout",
+      "subtitle": "You weren't made to disappear in the margins of your own life. A conversation is the first step to finding your way back. This is not another obligation. It's a sacred moment carved out just for you.",
+      "ctaText": "Book Your Sacred Conversation"
+    }
+  }
+}

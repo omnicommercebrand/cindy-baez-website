@@ -41,3 +41,17 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+.env*.local
+
+# raw source media (not served by the site)
+*.mov
+/cindy-image1.jpg
+/Professional weapons pic.jpg
+
+# local tooling
+/.claude/
+
+# private business docs — repo is PUBLIC, keep these local only
+*.docx
+/docx_content.txt
+/professional casual pic.jpg
